@@ -169,7 +169,7 @@
         </section>
     </div>
 
-    <button id="themeToggle" type="button">Dark mode</button>
+    <button id="themeToggle" type="button">🌙 Dark mode</button>
 
     <script>
         const THEME_KEY = 'theme';
@@ -184,7 +184,7 @@
             const isDark = theme === 'dark';
             document.documentElement.classList.toggle('dark', isDark);
             localStorage.setItem(THEME_KEY, theme);
-            document.getElementById('themeToggle').textContent = isDark ? 'Light mode' : 'Dark mode';
+            document.getElementById('themeToggle').textContent = isDark ? '🔆 Light mode' : '🌙 Dark mode';
         }
 
         const dtInput = document.getElementById('dtInput');
