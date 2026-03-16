@@ -1,0 +1,7 @@
+[build]
+  publish = "."
+  command = """
+    curl -s "https://api.indexnow.org/indexnow?url=https://datetimetoticks.dongbum.io/&key=9008f07740eb64ffb5f879db3f3056eb" &&
+    curl -s "https://www.bing.com/indexnow?url=https://datetimetoticks.dongbum.io/&key=9008f07740eb64ffb5f879db3f3056eb" &&
+    curl -s "https://searchadvisor.naver.com/indexnow?url=https://datetimetoticks.dongbum.io/&key=9008f07740eb64ffb5f879db3f3056eb"
+  """
