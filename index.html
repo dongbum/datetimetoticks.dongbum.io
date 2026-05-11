@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DateTime과 .NET Ticks를 상호 변환하는 무료 온라인 변환기입니다.">
-    <meta name="keywords" content="DateTime, Ticks, .NET Ticks, DateTime Converter, Ticks Converter, 날짜 변환, 시간 변환">
+    <meta name="description" content="Free online converter between DateTime and .NET Ticks. Instantly convert in both directions.">
+    <meta name="keywords" content="DateTime, Ticks, .NET Ticks, DateTime Converter, Ticks Converter, C#, dotnet">
     <meta name="robots" content="index, follow">
     <meta name="author" content="DateTime Ticks Converter">
     <meta name="theme-color" content="#2563eb">
@@ -16,9 +16,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="ko_KR">
-    <meta property="og:title" content="DateTime Ticks Converter | .NET Ticks ↔ DateTime 변환기">
-    <meta property="og:description" content="DateTime과 .NET Ticks를 빠르게 상호 변환해보세요.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="DateTime Ticks Converter | .NET Ticks ↔ DateTime">
+    <meta property="og:description" content="Free online converter between DateTime and .NET Ticks. Instantly convert in both directions.">
     <meta property="og:url" content="https://datetimetoticks.dongbum.io/">
     <meta property="og:site_name" content="DateTime Ticks Converter">
     <meta property="og:image" content="https://datetimetoticks.dongbum.io/og-image.png">
@@ -26,11 +26,11 @@
     <meta property="og:image:height" content="630">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DateTime Ticks Converter | .NET Ticks ↔ DateTime 변환기">
-    <meta name="twitter:description" content="DateTime과 .NET Ticks를 빠르게 상호 변환하는 무료 온라인 도구">
+    <meta name="twitter:title" content="DateTime Ticks Converter | .NET Ticks ↔ DateTime">
+    <meta name="twitter:description" content="Free online converter between DateTime and .NET Ticks. Instantly convert in both directions.">
     <meta name="twitter:image" content="https://datetimetoticks.dongbum.io/og-image.png">
 
-    <title>DateTime Ticks Converter | .NET Ticks ↔ DateTime 변환기</title>
+    <title>DateTime Ticks Converter | .NET Ticks ↔ DateTime</title>
 
     <script type="application/ld+json">
         {
@@ -41,13 +41,13 @@
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "Any",
             "inLanguage": ["ko", "en", "ja"],
-            "description": "DateTime과 .NET Ticks를 상호 변환하는 온라인 변환기",
+            "description": "Free online converter between DateTime and .NET Ticks.",
             "featureList": [
-                "DateTime to .NET Ticks 변환",
-                ".NET Ticks to DateTime 변환",
-                "자동 실시간 변환",
-                "다크모드 지원",
-                "한국어 · 영어 · 일본어 지원"
+                "DateTime to .NET Ticks conversion",
+                ".NET Ticks to DateTime conversion",
+                "Automatic real-time conversion",
+                "Dark mode support",
+                "Korean, English and Japanese support"
             ]
         }
     </script>
@@ -280,7 +280,7 @@
             },
         };
 
-        let currentLang = 'ko';
+        let currentLang = 'en';
 
         function detectLang() {
             const lang = (navigator.language || navigator.userLanguage || 'ko').toLowerCase();
@@ -290,7 +290,7 @@
         }
 
         function applyI18n(lang) {
-            const t = LANGS[lang] || LANGS.ko;
+            const t = LANGS[lang] || LANGS.en;
             currentLang = lang;
             document.documentElement.lang = lang;
             document.getElementById('converterHeading').textContent = t.converterHeading;
@@ -313,7 +313,7 @@
             const isDark = theme === 'dark';
             document.documentElement.classList.toggle('dark', isDark);
             localStorage.setItem(THEME_KEY, theme);
-            const t = LANGS[currentLang] || LANGS.ko;
+            const t = LANGS[currentLang] || LANGS.en;
             document.getElementById('themeToggle').textContent = isDark ? t.lightMode : t.darkMode;
         }
 
