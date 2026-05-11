@@ -70,7 +70,7 @@ naverb8f55d0a127c4a8c915399be9f02a445.html  # 네이버 사이트 인증 파일
 
 | 항목 | 내용 |
 |------|------|
-| 원본 파일 | `images/alarm_1715050.png` |
+| 원본 파일 | `images/logo.png` |
 | 출처 URL | https://www.magnific.com/icon/alarm_1715050#fromView=keyword&page=1&position=83 |
 | 용도 | favicon, apple-touch-icon, og-image 생성에 사용 |
 
