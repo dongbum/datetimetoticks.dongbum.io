@@ -284,9 +284,9 @@
 
         function detectLang() {
             const lang = (navigator.language || navigator.userLanguage || 'ko').toLowerCase();
+            if (lang.startsWith('ko')) return 'ko';
             if (lang.startsWith('ja')) return 'ja';
-            if (lang.startsWith('en')) return 'en';
-            return 'ko';
+            return 'en';
         }
 
         function applyI18n(lang) {
