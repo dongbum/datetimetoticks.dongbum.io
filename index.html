@@ -10,18 +10,27 @@
     <meta name="theme-color" content="#2563eb">
     <link rel="canonical" href="https://datetimetoticks.dongbum.io/">
 
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ko_KR">
-    <meta property="og:title" content="DateTime Ticks Converter | .NET Ticks <-> DateTime 변환기">
+    <meta property="og:title" content="DateTime Ticks Converter | .NET Ticks ↔ DateTime 변환기">
     <meta property="og:description" content="DateTime과 .NET Ticks를 빠르게 상호 변환해보세요.">
     <meta property="og:url" content="https://datetimetoticks.dongbum.io/">
     <meta property="og:site_name" content="DateTime Ticks Converter">
+    <meta property="og:image" content="https://datetimetoticks.dongbum.io/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="DateTime Ticks Converter | .NET Ticks <-> DateTime 변환기">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DateTime Ticks Converter | .NET Ticks ↔ DateTime 변환기">
     <meta name="twitter:description" content="DateTime과 .NET Ticks를 빠르게 상호 변환하는 무료 온라인 도구">
+    <meta name="twitter:image" content="https://datetimetoticks.dongbum.io/og-image.png">
 
-    <title>DateTime Ticks Converter | .NET Ticks <-> DateTime 변환기</title>
+    <title>DateTime Ticks Converter | .NET Ticks ↔ DateTime 변환기</title>
 
     <script type="application/ld+json">
         {
@@ -31,9 +40,20 @@
             "url": "https://datetimetoticks.dongbum.io/",
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "Any",
-            "description": "DateTime과 .NET Ticks를 상호 변환하는 온라인 변환기"
+            "inLanguage": "ko",
+            "description": "DateTime과 .NET Ticks를 상호 변환하는 온라인 변환기",
+            "featureList": [
+                "DateTime to .NET Ticks 변환",
+                ".NET Ticks to DateTime 변환",
+                "자동 실시간 변환",
+                "다크모드 지원"
+            ]
         }
     </script>
+
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
 
     <style>
         :root {
@@ -102,8 +122,20 @@
             gap: 10px;
         }
 
-        input {
+        .field {
+            display: flex;
+            flex-direction: column;
             flex: 1;
+            gap: 6px;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        input {
             border: 1px solid var(--border);
             background: var(--input-bg);
             color: var(--text);
@@ -111,6 +143,7 @@
             padding: 10px 12px;
             font-size: 14px;
             outline: none;
+            width: 100%;
         }
 
         input:focus {
@@ -123,6 +156,24 @@
             font-size: 14px;
             line-height: 1.45;
             color: var(--muted);
+        }
+
+        .info {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .info h2 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .info p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--muted);
+            margin: 0 0 8px;
         }
 
         #themeToggle {
@@ -154,18 +205,33 @@
         gtag('js', new Date());
         gtag('config', 'G-JZNE7QPDSC');
     </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6818401304157689"
+         crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="card">
-        <h1>Datetime - Ticks Converter</h1>
+        <h1>DateTime Ticks Converter</h1>
 
         <section>
-            <h2>Datetime & Ticks Converter</h2>
+            <h2>DateTime ↔ Ticks 변환</h2>
             <div class="row">
-                <input type="datetime-local" id="dtInput" placeholder="Datetime 입력">
-                <input type="number" id="tickInput" placeholder="Ticks 입력">
+                <div class="field">
+                    <label for="dtInput">DateTime</label>
+                    <input type="datetime-local" id="dtInput">
+                </div>
+                <div class="field">
+                    <label for="tickInput">.NET Ticks</label>
+                    <input type="number" id="tickInput" placeholder="Ticks 값 입력">
+                </div>
             </div>
             <p id="note">한쪽 필드에 값을 입력하면 다른 필드가 자동으로 업데이트됩니다.<br>Enter a value in one field and the other will update automatically.</p>
+        </section>
+
+        <section class="info">
+            <h2>.NET Ticks란?</h2>
+            <p>.NET Ticks는 0001년 1월 1일 자정(UTC)부터 경과한 시간을 100나노초 단위로 표현한 값입니다. 1초는 10,000,000 Ticks에 해당합니다.</p>
+            <p>주로 C#, .NET 환경의 <code>DateTime.Ticks</code> 속성에서 사용되며, 고정밀 시간 측정이나 로그 분석, 데이터베이스 타임스탬프 비교 등에 활용됩니다.</p>
         </section>
     </div>
 
@@ -260,8 +326,6 @@
         });
     </script>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6818401304157689"
-         crossorigin="anonymous"></script>
     <!-- datetimetoticks.dongbum.io -->
     <ins class="adsbygoogle"
          style="display:block"
