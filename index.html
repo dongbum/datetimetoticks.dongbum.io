@@ -114,10 +114,19 @@
         }
 
         h1 {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             margin: 0 0 28px;
             color: var(--title);
             font-size: 1.8rem;
+        }
+
+        h1 img {
+            height: 1em;
+            width: 1em;
+            object-fit: contain;
         }
 
         h2 {
@@ -220,7 +229,7 @@
 <body>
     <div class="page-wrapper">
     <div class="card">
-        <h1>DateTime Ticks Converter</h1>
+        <h1><img src="/images/alarm_1715050.png" alt="">DateTime Ticks Converter</h1>
 
         <section>
             <h2 id="converterHeading">DateTime ↔ Ticks Conversion</h2>
