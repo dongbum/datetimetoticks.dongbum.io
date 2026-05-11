@@ -81,3 +81,30 @@ naverb8f55d0a127c4a8c915399be9f02a445.html  # 네이버 사이트 인증 파일
 3. `sitemap.xml`의 `lastmod`는 변경사항 배포 시마다 오늘 날짜로 갱신한다.
 4. 이미지 원본은 `images/` 폴더에 보관한다.
 5. favicon / og-image는 PowerShell + `System.Drawing`으로 생성한다.
+
+## 커밋 메시지 규칙
+
+[Conventional Commits](https://www.conventionalcommits.org/) 스타일을 따르며, 메시지는 **한국어**로 작성한다.
+
+```
+<type>: <설명>
+
+[본문 - 선택사항]
+```
+
+| type | 용도 |
+|------|------|
+| `feat` | 새 기능 추가 |
+| `fix` | 버그 수정 |
+| `docs` | 문서 변경 |
+| `style` | 코드 포맷 등 기능 변화 없는 수정 |
+| `refactor` | 리팩토링 |
+| `chore` | 빌드, 설정 파일 등 기타 변경 |
+
+예시:
+```
+feat: 한국어·영어·일본어 다국어 지원 추가
+fix: 미지원 언어 fallback을 영어로 변경
+docs: CLAUDE.md에 커밋 메시지 규칙 추가
+chore: .gitignore 추가
+```
