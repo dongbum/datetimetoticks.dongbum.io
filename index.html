@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DateTime과 .NET Ticks를 상호 변환하는 무료 온라인 변환기입니다.">
-    <meta name="keywords" content="DateTime, Ticks, .NET Ticks, DateTime Converter, Ticks Converter, 날짜 변환, 시간 변환">
+    <meta name="description" content="Free online converter between DateTime and .NET Ticks. Instantly convert in both directions.">
+    <meta name="keywords" content="DateTime, Ticks, .NET Ticks, DateTime Converter, Ticks Converter, C#, dotnet">
     <meta name="robots" content="index, follow">
     <meta name="author" content="DateTime Ticks Converter">
     <meta name="theme-color" content="#2563eb">
     <link rel="canonical" href="https://datetimetoticks.dongbum.io/">
 
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="ko_KR">
-    <meta property="og:title" content="DateTime Ticks Converter | .NET Ticks <-> DateTime 변환기">
-    <meta property="og:description" content="DateTime과 .NET Ticks를 빠르게 상호 변환해보세요.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="DateTime Ticks Converter | .NET Ticks ↔ DateTime">
+    <meta property="og:description" content="Free online converter between DateTime and .NET Ticks. Instantly convert in both directions.">
     <meta property="og:url" content="https://datetimetoticks.dongbum.io/">
     <meta property="og:site_name" content="DateTime Ticks Converter">
+    <meta property="og:image" content="https://datetimetoticks.dongbum.io/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="DateTime Ticks Converter | .NET Ticks <-> DateTime 변환기">
-    <meta name="twitter:description" content="DateTime과 .NET Ticks를 빠르게 상호 변환하는 무료 온라인 도구">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DateTime Ticks Converter | .NET Ticks ↔ DateTime">
+    <meta name="twitter:description" content="Free online converter between DateTime and .NET Ticks. Instantly convert in both directions.">
+    <meta name="twitter:image" content="https://datetimetoticks.dongbum.io/og-image.png">
 
-    <title>DateTime Ticks Converter | .NET Ticks <-> DateTime 변환기</title>
+    <title>DateTime Ticks Converter | .NET Ticks ↔ DateTime</title>
 
     <script type="application/ld+json">
         {
@@ -31,9 +40,21 @@
             "url": "https://datetimetoticks.dongbum.io/",
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "Any",
-            "description": "DateTime과 .NET Ticks를 상호 변환하는 온라인 변환기"
+            "inLanguage": ["ko", "en", "ja"],
+            "description": "Free online converter between DateTime and .NET Ticks.",
+            "featureList": [
+                "DateTime to .NET Ticks conversion",
+                ".NET Ticks to DateTime conversion",
+                "Automatic real-time conversion",
+                "Dark mode support",
+                "Korean, English and Japanese support"
+            ]
         }
     </script>
+
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
 
     <style>
         :root {
@@ -75,9 +96,16 @@
             transition: background-color 0.2s ease, color 0.2s ease;
         }
 
-        .card {
+        .page-wrapper {
             width: 100%;
             max-width: 840px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .card {
+            width: 100%;
             background: var(--card);
             border-radius: 14px;
             box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
@@ -86,10 +114,19 @@
         }
 
         h1 {
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             margin: 0 0 28px;
             color: var(--title);
             font-size: 1.8rem;
+        }
+
+        h1 img {
+            height: 1em;
+            width: 1em;
+            object-fit: contain;
         }
 
         h2 {
@@ -102,8 +139,20 @@
             gap: 10px;
         }
 
-        input {
+        .field {
+            display: flex;
+            flex-direction: column;
             flex: 1;
+            gap: 6px;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        input {
             border: 1px solid var(--border);
             background: var(--input-bg);
             color: var(--text);
@@ -111,6 +160,7 @@
             padding: 10px 12px;
             font-size: 14px;
             outline: none;
+            width: 100%;
         }
 
         input:focus {
@@ -125,11 +175,28 @@
             color: var(--muted);
         }
 
+        .info {
+            margin-top: 24px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+        }
+
+        .info h2 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .info p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--muted);
+            margin: 0 0 8px;
+        }
+
         #themeToggle {
             position: fixed;
-            left: 50%;
-            bottom: 20px;
-            transform: translateX(-50%);
+            top: 16px;
+            right: 16px;
             border: 0;
             border-radius: 9999px;
             padding: 10px 14px;
@@ -138,11 +205,23 @@
             color: var(--button-text);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
             cursor: pointer;
+            z-index: 100;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
         }
 
         @media (max-width: 700px) {
             .row { flex-direction: column; }
             .card { padding: 20px; }
+            body { padding-top: 60px; }
         }
     </style>
 
@@ -154,25 +233,115 @@
         gtag('js', new Date());
         gtag('config', 'G-JZNE7QPDSC');
     </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6818401304157689"
+         crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="page-wrapper">
     <div class="card">
-        <h1>Datetime - Ticks Converter</h1>
+        <h1><img src="/images/logo.png" alt="">DateTime Ticks Converter</h1>
 
         <section>
-            <h2>Datetime & Ticks Converter</h2>
+            <h2 id="converterHeading">DateTime ↔ Ticks Conversion</h2>
             <div class="row">
-                <input type="datetime-local" id="dtInput" placeholder="Datetime 입력">
-                <input type="number" id="tickInput" placeholder="Ticks 입력">
+                <div class="field">
+                    <label id="labelDt" for="dtInput">DateTime</label>
+                    <input type="datetime-local" id="dtInput">
+                </div>
+                <div class="field">
+                    <label id="labelTick" for="tickInput">.NET Ticks</label>
+                    <input type="number" id="tickInput" placeholder="Enter Ticks value">
+                </div>
             </div>
-            <p id="note">한쪽 필드에 값을 입력하면 다른 필드가 자동으로 업데이트됩니다.<br>Enter a value in one field and the other will update automatically.</p>
+            <p id="note">Enter a value in one field and the other will update automatically.</p>
         </section>
+
+        <section class="info">
+            <h2 id="infoHeading">What is .NET Ticks?</h2>
+            <p id="infoP1">.NET Ticks represent the number of 100-nanosecond intervals elapsed since January 1, 0001 at midnight (UTC). One second equals 10,000,000 Ticks.</p>
+            <p id="infoP2">Commonly used with the <code>DateTime.Ticks</code> property in C# and .NET, Ticks are useful for high-precision time measurement, log analysis, and database timestamp comparison.</p>
+        </section>
+    </div>
+
+    <!-- datetimetoticks.dongbum.io -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6818401304157689"
+         data-ad-slot="3514324891"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
     </div>
 
     <button id="themeToggle" type="button">🌙 Dark mode</button>
 
     <script>
         const THEME_KEY = 'theme';
+
+        const LANGS = {
+            ko: {
+                converterHeading: 'DateTime ↔ Ticks 변환',
+                labelDt: 'DateTime',
+                labelTick: '.NET Ticks',
+                ticksPlaceholder: 'Ticks 값 입력',
+                note: '한쪽 필드에 값을 입력하면 다른 필드가 자동으로 업데이트됩니다.',
+                infoHeading: '.NET Ticks란?',
+                infoP1: '.NET Ticks는 0001년 1월 1일 자정(UTC)부터 경과한 시간을 100나노초 단위로 표현한 값입니다. 1초는 10,000,000 Ticks에 해당합니다.',
+                infoP2: '주로 C#, .NET 환경의 <code>DateTime.Ticks</code> 속성에서 사용되며, 고정밀 시간 측정이나 로그 분석, 데이터베이스 타임스탬프 비교 등에 활용됩니다.',
+                darkMode: '🌙 다크모드',
+                lightMode: '🔆 라이트모드',
+            },
+            en: {
+                converterHeading: 'DateTime ↔ Ticks Conversion',
+                labelDt: 'DateTime',
+                labelTick: '.NET Ticks',
+                ticksPlaceholder: 'Enter Ticks value',
+                note: 'Enter a value in one field and the other will update automatically.',
+                infoHeading: 'What is .NET Ticks?',
+                infoP1: '.NET Ticks represent the number of 100-nanosecond intervals elapsed since January 1, 0001 at midnight (UTC). One second equals 10,000,000 Ticks.',
+                infoP2: 'Commonly used with the <code>DateTime.Ticks</code> property in C# and .NET, Ticks are useful for high-precision time measurement, log analysis, and database timestamp comparison.',
+                darkMode: '🌙 Dark mode',
+                lightMode: '🔆 Light mode',
+            },
+            ja: {
+                converterHeading: 'DateTime ↔ Ticks 変換',
+                labelDt: 'DateTime',
+                labelTick: '.NET Ticks',
+                ticksPlaceholder: 'Ticks 値を入力',
+                note: 'どちらかのフィールドに値を入力すると、もう一方が自動的に更新されます。',
+                infoHeading: '.NET Ticksとは？',
+                infoP1: '.NET Ticksは、0001年1月1日の深夜(UTC)からの経過時間を100ナノ秒単位で表した値です。1秒は10,000,000 Ticksに相当します。',
+                infoP2: 'C#や.NET環境の<code>DateTime.Ticks</code>プロパティで主に使用され、高精度な時間計測、ログ分析、データベースのタイムスタンプ比較などに活用されます。',
+                darkMode: '🌙 ダークモード',
+                lightMode: '🔆 ライトモード',
+            },
+        };
+
+        let currentLang = 'en';
+
+        function detectLang() {
+            const lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            if (lang.startsWith('ko')) return 'ko';
+            if (lang.startsWith('ja')) return 'ja';
+            return 'en';
+        }
+
+        function applyI18n(lang) {
+            const t = LANGS[lang] || LANGS.en;
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.getElementById('converterHeading').textContent = t.converterHeading;
+            document.getElementById('labelDt').textContent = t.labelDt;
+            document.getElementById('labelTick').textContent = t.labelTick;
+            document.getElementById('tickInput').placeholder = t.ticksPlaceholder;
+            document.getElementById('note').textContent = t.note;
+            document.getElementById('infoHeading').textContent = t.infoHeading;
+            document.getElementById('infoP1').textContent = t.infoP1;
+            document.getElementById('infoP2').innerHTML = t.infoP2;
+        }
 
         function getInitialTheme() {
             const saved = localStorage.getItem(THEME_KEY);
@@ -184,7 +353,8 @@
             const isDark = theme === 'dark';
             document.documentElement.classList.toggle('dark', isDark);
             localStorage.setItem(THEME_KEY, theme);
-            document.getElementById('themeToggle').textContent = isDark ? '🔆 Light mode' : '🌙 Dark mode';
+            const t = LANGS[currentLang] || LANGS.en;
+            document.getElementById('themeToggle').textContent = isDark ? t.lightMode : t.darkMode;
         }
 
         const dtInput = document.getElementById('dtInput');
@@ -255,22 +425,12 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
+            applyI18n(detectLang());
             applyTheme(getInitialTheme());
             setCurrentDatetime();
         });
     </script>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6818401304157689"
-         crossorigin="anonymous"></script>
-    <!-- datetimetoticks.dongbum.io -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6818401304157689"
-         data-ad-slot="3514324891"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+
 </body>
 </html>
