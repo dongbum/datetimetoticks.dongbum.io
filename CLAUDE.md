@@ -66,6 +66,14 @@ naverb8f55d0a127c4a8c915399be9f02a445.html  # 네이버 사이트 인증 파일
 - `sitemap.xml`: 배포 후 `lastmod` 날짜 갱신 필요
 - `robots.txt`: 전체 허용, sitemap URL 명시
 
+## 아이콘 출처
+
+| 항목 | 내용 |
+|------|------|
+| 원본 파일 | `images/alarm_1715050.png` |
+| 출처 URL | https://www.magnific.com/icon/alarm_1715050#fromView=keyword&page=1&position=83 |
+| 용도 | favicon, apple-touch-icon, og-image 생성에 사용 |
+
 ## 작업 규칙
 
 1. **항상 새 브랜치 → PR → 머지 순서**로 작업한다. main에 직접 커밋하지 않는다.
