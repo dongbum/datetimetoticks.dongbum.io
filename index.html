@@ -96,9 +96,16 @@
             transition: background-color 0.2s ease, color 0.2s ease;
         }
 
-        .card {
+        .page-wrapper {
             width: 100%;
             max-width: 840px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .card {
+            width: 100%;
             background: var(--card);
             border-radius: 14px;
             box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
@@ -211,6 +218,7 @@
          crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="page-wrapper">
     <div class="card">
         <h1>DateTime Ticks Converter</h1>
 
@@ -234,6 +242,18 @@
             <p id="infoP1">.NET Ticks represent the number of 100-nanosecond intervals elapsed since January 1, 0001 at midnight (UTC). One second equals 10,000,000 Ticks.</p>
             <p id="infoP2">Commonly used with the <code>DateTime.Ticks</code> property in C# and .NET, Ticks are useful for high-precision time measurement, log analysis, and database timestamp comparison.</p>
         </section>
+    </div>
+
+    <!-- datetimetoticks.dongbum.io -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6818401304157689"
+         data-ad-slot="3514324891"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
     </div>
 
     <button id="themeToggle" type="button">🌙 Dark mode</button>
@@ -283,7 +303,7 @@
         let currentLang = 'en';
 
         function detectLang() {
-            const lang = (navigator.language || navigator.userLanguage || 'ko').toLowerCase();
+            const lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
             if (lang.startsWith('ko')) return 'ko';
             if (lang.startsWith('ja')) return 'ja';
             return 'en';
@@ -391,15 +411,6 @@
         });
     </script>
 
-    <!-- datetimetoticks.dongbum.io -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6818401304157689"
-         data-ad-slot="3514324891"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+
 </body>
 </html>
